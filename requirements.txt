@@ -2,7 +2,6 @@ certifi==2020.12.5
 chardet==4.0.0
 click==7.1.2
 csvsqlite3==0.1.1
-ffmpeg==1.4
 idna==2.10
 itsdangerous==1.1.0
 MarkupSafe==1.1.1
@@ -13,4 +12,3 @@ simpleaudio==1.0.4
 six==1.15.0
 urllib3==1.26.4
 vk-api==11.9.1
-Werkzeug==1.0.1
