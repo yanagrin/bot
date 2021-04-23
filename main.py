@@ -17,7 +17,7 @@ def main():
             print('Текст:', event.obj['text'])
             vk = vk_session.get_api()
             vk.messages.send(user_id=event.obj['from_id'],
-                             message="Андрей-бомжик",
+                             message="ПРИВЕТ)",
                              random_id=random.randint(0, 2 ** 64))
 
 
