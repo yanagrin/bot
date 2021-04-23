@@ -3,13 +3,12 @@ from vk_api.bot_longpoll import VkBotLongPoll, VkBotEventType
 import random
 import os
 
-TOKEN = os.environ.get("VK_TOKEN", None)
-
 from vk_api import VkApi
 from vk_api.upload import VkUpload
 from vk_api.utils import get_random_id
 
-
+TOKEN = os.environ.get("VK_TOKEN", None)
+PEER_ID = '204074800'
 def main1():
     vk_session = vk_api.VkApi(token=TOKEN)
     longpoll = VkBotLongPoll(vk_session, "204074800")
@@ -25,8 +24,7 @@ def main1():
                              random_id=random.randint(0, 2 ** 64))
     vk = vk_session.get_api()
     upload = VkUpload(vk)
-
-    send_photo(vk, PEER_ID, *upload_photo(upload, 'photo.jpg'))
+    send_photo(vk, PEER_ID, *upload_photo(upload, 'im1.jpg'))
 
 
 def upload_photo(upload, photo):
@@ -45,9 +43,6 @@ def send_photo(vk, peer_id, owner_id, photo_id, access_key):
         peer_id=peer_id,
         attachment=attachment
     )
-PEER_ID = '204074800'
-
 
 if __name__ == '__main1__':
     main1()
-
