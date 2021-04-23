@@ -10,7 +10,7 @@ from vk_api.upload import VkUpload
 from vk_api.utils import get_random_id
 
 
-def main():
+def main1():
     vk_session = vk_api.VkApi(token=TOKEN)
     longpoll = VkBotLongPoll(vk_session, "204074800")
     for event in longpoll.listen():
