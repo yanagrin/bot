@@ -23,7 +23,6 @@ def main1():
             vk.messages.send(user_id=event.obj['from_id'],
                              message="Спасибо, что написали нам. Мы скоро ответим ))" + "\nНовое сообщение",
                              random_id=random.randint(0, 2 ** 64))
-    vk_session = VkApi(token=TOKEN)
     vk = vk_session.get_api()
     upload = VkUpload(vk)
 
@@ -50,4 +49,4 @@ PEER_ID = '204074800'
 
 
 if __name__ == '__main1__':
-    main()
+    main1()
