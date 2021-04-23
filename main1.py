@@ -23,6 +23,11 @@ def main():
             vk.messages.send(user_id=event.obj['from_id'],
                              message="Спасибо, что написали нам. Мы скоро ответим ))" + "\nНовое сообщение",
                              random_id=random.randint(0, 2 ** 64))
+    vk_session = VkApi(token=TOKEN)
+    vk = vk_session.get_api()
+    upload = VkUpload(vk)
+
+    send_photo(vk, PEER_ID, *upload_photo(upload, 'photo.jpg'))
 
 
 def upload_photo(upload, photo):
@@ -42,15 +47,6 @@ def send_photo(vk, peer_id, owner_id, photo_id, access_key):
         attachment=attachment
     )
 PEER_ID = '204074800'
-
-def main():
-    vk_session = VkApi(token=TOKEN)
-    vk = vk_session.get_api()
-    upload = VkUpload(vk)
-
-    send_photo(vk, PEER_ID, *upload_photo(upload, 'photo.jpg'))
-
-
 
 
 if __name__ == '__main__':
