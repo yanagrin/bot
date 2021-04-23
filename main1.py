@@ -24,7 +24,7 @@ def main():
                              random_id=random.randint(0, 2 ** 64))
     attachments = []
     upload = VkUpload(vk_session)
-    image_url = 'Ссылка на картинку'
+    image_url = 'https://avatars.mds.yandex.net/get-zen_doc/96780/pub_5cbd534a5d653c00b37f7171_5cbd540d569af600b33b2d8b/scale_1200'
     session = requests.Session()
     image = session.get(image_url, stream=True)
     photo = upload.photo_messages(photos=image.raw)[0]
