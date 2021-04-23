@@ -49,5 +49,5 @@ def send_photo(vk, peer_id, owner_id, photo_id, access_key):
 PEER_ID = '204074800'
 
 
-if __name__ == '__main__':
+if __name__ == '__main1__':
     main()
