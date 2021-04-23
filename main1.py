@@ -3,8 +3,11 @@ from vk_api.bot_longpoll import VkBotLongPoll, VkBotEventType
 import random
 import os
 
-TOKEN = os.environ.get("VK_TOKEN", None)
+import requests
+from vk_api import VkUpload
+import datetime
 
+TOKEN = os.environ.get("VK_TOKEN", None)
 
 def main():
     vk_session = vk_api.VkApi(token=TOKEN)
@@ -19,6 +22,21 @@ def main():
             vk.messages.send(user_id=event.obj['from_id'],
                              message="Спасибо, что написали нам. Мы скоро ответим ))" + "\nНовое сообщение",
                              random_id=random.randint(0, 2 ** 64))
+    attachments = []
+    upload = VkUpload(vk_session)
+    image_url = 'Ссылка на картинку'
+    session = requests.Session()
+    image = session.get(image_url, stream=True)
+    photo = upload.photo_messages(photos=image.raw)[0]
+    attachments.append(
+        'photo{}_{}'.format(photo['owner_id'], photo['id'])
+    )
+    vk = vk_session.get_api()
+    vk.messages.send(
+        user_id=event.user_id,
+        attachment=','.join(attachments),
+        message='Ваш текст'
+    )
 
 
 if __name__ == '__main__':
