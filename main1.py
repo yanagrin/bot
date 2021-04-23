@@ -3,11 +3,12 @@ from vk_api.bot_longpoll import VkBotLongPoll, VkBotEventType
 import random
 import os
 
-import requests
-from vk_api import VkUpload
-import datetime
-
 TOKEN = os.environ.get("VK_TOKEN", None)
+
+from vk_api import VkApi
+from vk_api.upload import VkUpload
+from vk_api.utils import get_random_id
+
 
 def main():
     vk_session = vk_api.VkApi(token=TOKEN)
@@ -22,21 +23,34 @@ def main():
             vk.messages.send(user_id=event.obj['from_id'],
                              message="Спасибо, что написали нам. Мы скоро ответим ))" + "\nНовое сообщение",
                              random_id=random.randint(0, 2 ** 64))
-    attachments = []
-    upload = VkUpload(vk_session)
-    image_url = 'https://avatars.mds.yandex.net/get-zen_doc/96780/pub_5cbd534a5d653c00b37f7171_5cbd540d569af600b33b2d8b/scale_1200'
-    session = requests.Session()
-    image = session.get(image_url, stream=True)
-    photo = upload.photo_messages(photos=image.raw)[0]
-    attachments.append(
-        'photo{}_{}'.format(photo['owner_id'], photo['id'])
-    )
-    vk = vk_session.get_api()
+
+
+def upload_photo(upload, photo):
+    response = upload.photo_messages(photo)[0]
+
+    owner_id = response['204074800']
+    photo_id = response['https://vplate.ru/images/article/orig/2019/03/kak-opredelit-pol-morskoj-svinki.jpg']
+    access_key = response['access_key']
+
+    return owner_id, photo_id, access_key
+
+def send_photo(vk, peer_id, owner_id, photo_id, access_key):
+    attachment = f'photo{owner_id}_{photo_id}_{access_key}'  #attachment = f'photo{owner_id}_{photo_id}_{access_key}'
     vk.messages.send(
-        user_id=event.user_id,
-        attachment=','.join(attachments),
-        message='Ваш текст'
+        random_id=get_random_id(),
+        peer_id=peer_id,
+        attachment=attachment
     )
+PEER_ID = '204074800'
+
+def main():
+    vk_session = VkApi(token=TOKEN)
+    vk = vk_session.get_api()
+    upload = VkUpload(vk)
+
+    send_photo(vk, PEER_ID, *upload_photo(upload, 'photo.jpg'))
+
+
 
 
 if __name__ == '__main__':
