@@ -16,8 +16,9 @@ def main():
             print('Для меня от:', event.obj['from_id'])
             print('Текст:', event.obj['text'])
             vk = vk_session.get_api()
+            print(event.obj['peer_id'])
             vk.messages.send(user_id=event.obj['from_id'],
-                             message="Спасибо, что написали нам. Мы скоро ответим ))" + "\nНовое сообщение",
+                             message="Спасибо, что написали нам. Мы скоро ответим000 ))" + "\nНовое сообщение",
                              random_id=random.randint(0, 2 ** 64))
 
 
