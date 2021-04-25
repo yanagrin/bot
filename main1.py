@@ -3,7 +3,7 @@ from vk_api.bot_longpoll import VkBotLongPoll, VkBotEventType
 import random
 import os
 
-# TOKEN = "65ea7c5f7de818f2874b1df87a3d68fb1901edf612ded3d4b3b2e2efab35ac0312ab54d4029758d6ff05e"
+
 TOKEN = os.environ.get("VK_TOKEN", None)
 steps = {
     0:{
