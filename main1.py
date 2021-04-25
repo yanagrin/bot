@@ -2,13 +2,14 @@ import vk_api
 from vk_api.bot_longpoll import VkBotLongPoll, VkBotEventType
 import random
 import os
-# TOKEN = os.environ.get("VK_TOKEN", None)
-TOKEN = "65ea7c5f7de818f2874b1df87a3d68fb1901edf612ded3d4b3b2e2efab35ac0312ab54d4029758d6ff05e"
+TOKEN = os.environ.get("VK_TOKEN", None)
+
+
 steps = {
     0:{
-        "msg":"Привет, мы хожем подобрать модель телевизора по вашим пожеланиям. Для этого напишите ДА"
+        "msg": "Привет, мы хожем подобрать модель телевизора по вашим пожеланиям. Для этого напишите ДА"
               + "\nЕсли вам нужна помощь специалиста, то оставьте сообщение. Вам ответит консультант нашего магазина",
-        'ans':{
+        'ans': {
             'да': 1,
         },
         "def": 50,
@@ -65,6 +66,7 @@ steps = {
     },
 }
 
+
 def main():
     vk_session = vk_api.VkApi(token=TOKEN)
     longpoll = VkBotLongPoll(vk_session, "204074800")
@@ -86,7 +88,6 @@ def main():
             if from_id in dic:
                 stuid = dic.get(from_id, 0)  # получить текущее сост пользователя (на какой вопр ответил)
                 stuid = steps[stuid]['ans'].get(text, steps[stuid]['def'])  # как ответил на вопрос
-
                 dic[from_id] = stuid  # запоминаем состояние пользователя
                 if stuid == 50:
                     continue
