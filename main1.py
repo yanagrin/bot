@@ -102,7 +102,7 @@ def main():
                                      message="Мы подобрали для вас подходящюю модель:",
                                      random_id=random.randint(0, 2 ** 64))
                 elif stuid == 4:
-                    response = upload.photo_messages("C:\\Users\\Яна\\pyton\\bb.jpg")[0]  # картинка
+                    response = upload.photo_messages(os.path.abspath('bb.jpg'))[0]  # картинка
                     owner_id = response['owner_id']  # картинка
                     photo_id = response['id']  # картинка
                     access_key = response['access_key']  # картинка
@@ -112,7 +112,7 @@ def main():
                                      message="Мы подобрали для вас подходящюю модель:",
                                      random_id=random.randint(0, 2 ** 64))
                 elif stuid == 6:
-                    response = upload.photo_messages("C:\\Users\\Яна\\pyton\\mp.jpg")[0]  # картинка
+                    response = upload.photo_messages(os.path.abspath('mp.jpg'))[0]  # картинка
                     owner_id = response['owner_id']  # картинка
                     photo_id = response['id']  # картинка
                     access_key = response['access_key']  # картинка
@@ -122,7 +122,7 @@ def main():
                                      message="Мы подобрали для вас подходящюю модель:",
                                      random_id=random.randint(0, 2 ** 64))
                 elif stuid == 7:
-                    response = upload.photo_messages("C:\\Users\\Яна\\pyton\\mb.jpg")[0]  # картинка
+                    response = upload.photo_messages(os.path.abspath('mb.jpg'))[0]  # картинка
                     owner_id = response['owner_id']  # картинка
                     photo_id = response['id']  # картинка
                     access_key = response['access_key']  # картинка
