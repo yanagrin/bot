@@ -92,7 +92,7 @@ def main():
                 if stuid == 50:
                     continue
                 elif stuid == 5:
-                    response = upload.photo_messages("os.path.abspath('bp.jpg')")[0]  # картинка
+                    response = upload.photo_messages(os.path.abspath('bp.jpg'))[0]  # картинка
                     owner_id = response['owner_id']  # картинка
                     photo_id = response['id']  # картинка
                     access_key = response['access_key']  # картинка
