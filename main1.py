@@ -21,7 +21,6 @@ steps = {
             'средний': 3,
             'mal': 4
         },
-
         "def": 1
     },
     2: {
@@ -44,25 +43,29 @@ steps = {
         "msg": "Телевизор Xiaomi Mi TV 4S 43 T2 Global 42.5""" + "\n 25990 рублей"
                + "\nКомфортный в использовании LED телевизор прекрасно впишется в любой интерьер помещения. Модель "
                  "имеет диагональ 43 дюйма, поэтому отлично подойдет для любой гостиной комнаты "
-               + "\nописание: https://101gadjet.ru/index.php?route=product/product&path=135&product_id=280&sort=p.price&order=DESC&limit=100",
+               + "\nописание: https://101gadjet.ru/index.php?route=product/product&path=135&product_id=280&sort=p.price&order=DESC&limit=100"
+               + "\nВсе телевизоры: https://101gadjet.ru/TvXiaomi",
     },
     7: {
         "msg": "Телевизор Xiaomi Mi TV 4A 32 T2 Global 31.5" + "\n 15200 рублей"
                + "\nПри всем изобилии умных функций, Mi TV 4A 32 прост в использовании. В комплекте к нему идет "
                  "Bluetooth-пульт управления с 12 кнопками и функцией голосового управления."
-               + "\nподробное описание: https://101gadjet.ru/TvXiaomi/televizor-xiaomi-mi-tv-4a-32-t2-global-31-5-2019",
+               + "\nподробное описание: https://101gadjet.ru/TvXiaomi/televizor-xiaomi-mi-tv-4a-32-t2-global-31-5-2019"
+               + "\nВсе телевизоры: https://101gadjet.ru/TvXiaomi",
     },
     4: {
         "msg": "Телевизор Xiaomi Mi TV 4S 70 (Интерфейс на русском языке)" + "\n 60900 рублей"
                + "\nпрогрессивный продукт, входящий во флагманскую линейку. В технике умело реализованы новшества"
                  "искусственного интеллекта, истинное качество 4К-разрешения и технология PatchWall."
-               + "\nописание: https://101gadjet.ru/TvXiaomi/televizor-xiaomi-mi-tv-4s-70-interfejs-na-russkom-jazyke",
+               + "\nописание: https://101gadjet.ru/TvXiaomi/televizor-xiaomi-mi-tv-4s-70-interfejs-na-russkom-jazyke"
+               + "\nВсе телевизоры: https://101gadjet.ru/TvXiaomi",
     },
     5: {
         "msg": "Телевизор Xiaomi Mi TV 4S 75 (Интерфейс на русском языке)" + "\n 76900 рублей"
                + "\nТелевизор имеет стильный дизайн, выполненный в тонком, металлическом корпусе. Тонкие рамки и "
                  "LED подсветка позволяют полностью погрузиться в атмосферу мультимедиа."
-               + "\nподробное описание по ссылке: https://101gadjet.ru/TvXiaomi/televizor-xiaomi-mi-tv-4s-75",
+               + "\nподробное описание по ссылке: https://101gadjet.ru/TvXiaomi/televizor-xiaomi-mi-tv-4s-75"
+               + "\nВсе телевизоры: https://101gadjet.ru/TvXiaomi",
     },
 }
 
