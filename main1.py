@@ -2,7 +2,7 @@ import vk_api
 from vk_api.bot_longpoll import VkBotLongPoll, VkBotEventType
 import random
 import os
-
+print(os.path.abspath('file.txt'))
 
 TOKEN = os.environ.get("VK_TOKEN", None)
 steps = {
@@ -15,7 +15,7 @@ steps = {
         "def": 50,
     },
     1: {
-        "msg": 'Вам нужен большой или средний телевизор?',
+        "msg": 'Вам нужен БОЛЬШОЙ или СРЕДНИЙ по-размеру телевизор?',
         'ans': {
             'большой': 2,
             'средний': 3,
@@ -25,7 +25,7 @@ steps = {
         "def": 1
     },
     2: {
-        "msg": "Вы желаете преобрести премиальную модель или бюджетную?",
+        "msg": "Вы желаете преобрести ПРЕМИАЛЬНУЮ или БЮДЖЕТНУЮ модель?",
         'ans': {
             'бюджетную': 4,
             'премиальную': 5,
@@ -33,7 +33,7 @@ steps = {
         "def": 2,
     },
     3: {
-        "msg": "Вы желаете преобрести премиальную модель или бюджетную?",
+        "msg": "Вы желаете преобрести ПРЕМИАЛЬНУЮ или БЮДЖЕТНУЮ модель",
         'ans': {
             'бюджетную': 7,
             'премиальную': 6,
@@ -92,7 +92,7 @@ def main():
                 if stuid == 50:
                     continue
                 elif stuid == 5:
-                    response = upload.photo_messages("C:\\Users\\Яна\\pyton\\bp.jpg")[0]  # картинка
+                    response = upload.photo_messages("C:\Users\Яна\pyton\bp.jpg")[0]  # картинка
                     owner_id = response['owner_id']  # картинка
                     photo_id = response['id']  # картинка
                     access_key = response['access_key']  # картинка
