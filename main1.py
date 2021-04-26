@@ -45,6 +45,7 @@ steps = {
                  "имеет диагональ 43 дюйма, поэтому отлично подойдет для любой гостиной комнаты "
                + "\nописание: https://101gadjet.ru/index.php?route=product/product&path=135&product_id=280&sort=p.price&order=DESC&limit=100"
                + "\nВсе телевизоры: https://101gadjet.ru/TvXiaomi",
+        "def": 6,
     },
     7: {
         "msg": "Телевизор Xiaomi Mi TV 4A 32 T2 Global 31.5" + "\n 15200 рублей"
